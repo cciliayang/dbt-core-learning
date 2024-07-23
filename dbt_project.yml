@@ -33,4 +33,7 @@ models:
   learning_dbt_core_demo:
     # Config indicated by + and applies to all files under models/example/
     example:
-      +materialized: view
+      materialized: view
+      dir2:
+        materialized: table
+    materialized: table
