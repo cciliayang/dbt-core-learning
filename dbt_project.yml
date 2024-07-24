@@ -32,8 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   learning_dbt_core_demo:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      materialized: view
-      dir2:
-        materialized: table
-    materialized: table
+    +materialized: table
+    +persist_docs:
+      relation: true
+      columns: true
+
