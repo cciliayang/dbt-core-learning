@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: int_ecommerce__order_items_products
+    description: "Intermediate e-commerce Order item data jointed to product data"
+    columns:
+      - name: order_item_id
+        description: "Primary key"
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: ""
+        tests:
+          - not_null
+      - &user_id
+          name: user_id
+          description: "Unique identifier for a user"
+          tests:
+            - not_null
+
+      - name: product_id
+        description: ""
+        tests:
+          - not_null
+
+      - name: item_sale_price
+        description: "Item price sold for"
+        tests:
+          - not_null
+
+      - name: product_department
+        description: "Department item is Menswear or Womenswear"
+        tests:
+          - not_null
+
+      - name: product_cost
+        description: "Price of product cost purchased by business"
+        tests:
+          - not_null
+
+      - name: product_retail_price
+        description: "Product retails for e-commerce store"
+        tests:
+          - not_null
+
+      - name: item_profit
+        description: "item_sale_price minus product_cost"
+        tests:
+          - not_null
+
+      - name: item_discount
+        description: "product_retail_price minus item_sale_price"
+        tests:
+          - not_null
